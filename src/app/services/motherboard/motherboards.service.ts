@@ -77,4 +77,10 @@ export class MotherboardsService {
       }
     )
   }
+
+  deleteMotherboard(motherboardId: string){
+    this.motherboards = this.motherboards.filter(motherboard => {
+      return motherboard.id !== motherboardId;
+    })
+  }
 }

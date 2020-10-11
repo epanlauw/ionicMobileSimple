@@ -67,4 +67,10 @@ export class GpusService {
       }
     )
   }
+
+  deleteGpu(gpuId: string){
+    this.gpus = this.gpus.filter(gpu => {
+      return gpu.id !== gpuId
+    });
+  }
 }

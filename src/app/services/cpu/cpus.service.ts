@@ -111,5 +111,11 @@ export class CpusService {
       }
     )
   }
+
+  deleteCpu(cpuId: string){
+    this.cpus = this.cpus.filter(cpu => {
+      return cpu.id !== cpuId;
+    });
+  }
   
 }

@@ -84,6 +84,12 @@ export class BarangsService {
     this.barangs.push(last)
   }
 
+  deleteBarang(barangId: string){
+    this.barangs = this.barangs.filter(barang => {
+      return barang.id !== barangId;
+    })
+  }
+
   saveGpu(){
     const last: any = this.gpusService.getAllGpus()[this.gpusService.getAllGpus().length - 1];
     this.barangs.push(last);
@@ -102,4 +108,6 @@ export class BarangsService {
   getAllBarangs(){
     return this.barangs;
   }
+
+
 }

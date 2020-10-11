@@ -66,5 +66,11 @@ export class RamsService {
     )
   }
 
+  deleteRam(ramId: string){
+    this.rams = this.rams.filter(ram => {
+      return ram.id !== ramId;
+    });
+  }
+
   constructor() { }
 }

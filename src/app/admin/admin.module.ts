@@ -8,6 +8,7 @@ import { AdminPageRoutingModule } from './admin-routing.module';
 
 import { AdminPage } from './admin.page';
 import { AddComponent } from './component/add/add.component';
+import { ModalEditComponent } from './component/modal-edit/modal-edit.component';
 
 @NgModule({
   imports: [
@@ -17,6 +18,6 @@ import { AddComponent } from './component/add/add.component';
     AdminPageRoutingModule,
     ReactiveFormsModule
   ],
-  declarations: [AdminPage, AddComponent]
+  declarations: [AdminPage, AddComponent, ModalEditComponent]
 })
 export class AdminPageModule {}
