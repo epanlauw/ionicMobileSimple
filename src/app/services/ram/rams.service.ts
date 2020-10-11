@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { NgForm } from '@angular/forms';
 import { Ram } from 'src/app/ram.model';
 
 @Injectable({
@@ -47,6 +48,22 @@ export class RamsService {
     return this.rams.find(ram => {
       return ram.id === ramId;
     });
+  }
+
+  addRam(form: NgForm){
+    const idLength: number = this.rams.length + 1;
+    this.rams.push(
+      {
+        id: 'rm'.concat(idLength.toString()),
+        merek: form.value.merek,
+        model: form.value.model,
+        foto: form.value.imageUrl,
+        speed: form.value.speed,
+        ukuran: form.value.ukuran,
+        stock: form.value.stock,
+        harga: form.value.harga
+      }
+    )
   }
 
   constructor() { }

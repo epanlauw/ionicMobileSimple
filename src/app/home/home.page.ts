@@ -24,7 +24,7 @@ export class HomePage {
   }
 
   ionViewWillEnter(){
-    this.barangsService.saveAllBarangs();
+    
     this.barangs = this.barangsService.getAllBarangs();
   }
 

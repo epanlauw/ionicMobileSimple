@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { NgForm } from '@angular/forms';
 import { Motherboard } from 'src/app/motherboard.model';
 
 @Injectable({
@@ -59,5 +60,21 @@ export class MotherboardsService {
     return this.motherboards.find(motherboard => {
       return motherboard.id === motherboardId;
     });
+  }
+
+  addMotherboard(form: NgForm){
+    const idLength: number = this.motherboards.length + 1;
+    this.motherboards.push(
+      {
+        id: 'mb'.concat(idLength.toString()),
+        merek: form.value.merek,
+        model: form.value.model,
+        foto: form.value.imageUrl,
+        chipset: form.value.chipset,
+        merek_proci: form.value.merek_proci,
+        stock: form.value.stock,
+        harga: form.value.harga
+      }
+    )
   }
 }

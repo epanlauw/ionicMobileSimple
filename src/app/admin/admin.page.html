@@ -14,15 +14,29 @@
 
 <ion-content>
   <ion-list>
-    <ion-item *ngFor="let barang of barangs" [routerLink]="['../', barang.id]">
-      <ion-thumbnail slot="start">
-        <ion-img [src]="barang.foto"></ion-img>
-      </ion-thumbnail>
-      <ion-grid>
-        <ion-row>{{barang.merek}} {{barang.model}}</ion-row>
-        <ion-row>Harga : {{barang.harga | currency:"Rp "}}</ion-row>
-        <ion-row>Tersedia : {{barang.stock}}</ion-row>
-      </ion-grid>
-    </ion-item>
+    <ion-item-sliding *ngFor="let barang of barangs">
+      <ion-item-options side="start">
+        <ion-item-option color="danger">
+          <ion-icon name="trash" slot="icon-only"></ion-icon>
+        </ion-item-option>
+      </ion-item-options>
+
+      <ion-item [routerLink]="['../', barang.id]">
+        <ion-thumbnail slot="start">
+          <ion-img [src]="barang.foto"></ion-img>
+        </ion-thumbnail>
+        <ion-grid>
+          <ion-row>{{barang.merek}} {{barang.model}}</ion-row>
+          <ion-row>Harga : {{barang.harga | currency:"Rp "}}</ion-row>
+          <ion-row>Tersedia : {{barang.stock}}</ion-row>
+        </ion-grid>
+      </ion-item>
+
+      <ion-item-options side="end">
+        <ion-item-option>
+          <ion-icon name="pencil-outline" slot="icon-only"></ion-icon>
+        </ion-item-option>
+      </ion-item-options>
+    </ion-item-sliding>
   </ion-list>
 </ion-content>

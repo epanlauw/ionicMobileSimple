@@ -21,7 +21,9 @@ export class BarangsService {
     private motherboardsService: MotherboardsService,
     private gpusService: GpusService,
     private ramsService: RamsService
-  ) {}
+  ) {
+    this.saveAllBarangs();
+  }
 
   saveAllBarangs(){
     this.cpusService.getAllCpus().forEach(cpu => {
@@ -78,8 +80,23 @@ export class BarangsService {
   }
 
   saveCpu(){
-    const last: any =  this.cpusService.getAllCpus()[this.cpusService.getAllCpus().length-1];
+    const last: any =  this.cpusService.getAllCpus()[this.cpusService.getAllCpus().length - 1];
     this.barangs.push(last)
+  }
+
+  saveGpu(){
+    const last: any = this.gpusService.getAllGpus()[this.gpusService.getAllGpus().length - 1];
+    this.barangs.push(last);
+  }
+
+  saveMobo(){
+    const last: any = this.motherboardsService.getAllMotherboards()[this.motherboardsService.getAllMotherboards().length - 1];
+    this.barangs.push(last);
+  }
+
+  saveRam(){
+    const last: any = this.ramsService.getAllRams()[this.ramsService.getAllRams().length - 1];
+    this.barangs.push(last);
   }
 
   getAllBarangs(){

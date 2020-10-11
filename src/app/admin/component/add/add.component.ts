@@ -49,6 +49,15 @@ export class AddComponent implements OnInit {
     }
     else if(this.jenis == "gpu"){
       this.gpusService.addGpu(form);
+      this.barangsService.saveGpu();
+    }
+    else if(this.jenis == "motherboard"){
+      this.motherboardsService.addMotherboard(form);
+      this.barangsService.saveMobo();
+    }
+    else if(this.jenis == "ram"){
+      this.ramsService.addRam(form);
+      this.barangsService.saveRam();
     }
   }
 

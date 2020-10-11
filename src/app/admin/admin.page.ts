@@ -21,7 +21,6 @@ export class AdminPage implements OnInit {
   }
 
   ionViewWillEnter(){
-    this.barangsService.saveAllBarangs();
     this.barangs = this.barangsService.getAllBarangs();
   }
 
