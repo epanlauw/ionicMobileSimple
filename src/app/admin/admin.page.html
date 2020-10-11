@@ -16,7 +16,7 @@
   <ion-list>
     <ion-item-sliding *ngFor="let barang of barangs">
       <ion-item-options side="start">
-        <ion-item-option color="danger" (click)="deleteItem(barang.id)">
+        <ion-item-option color="danger" (click)="presentAlert(barang.id)">
           <ion-icon name="trash" slot="icon-only"></ion-icon>
         </ion-item-option>
       </ion-item-options>

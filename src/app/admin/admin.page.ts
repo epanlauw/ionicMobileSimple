@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
-import { ModalController } from '@ionic/angular';
+import { AlertController, ModalController } from '@ionic/angular';
 import { Barang } from '../barang.model';
 import { BarangsService } from '../services/barang/barangs.service';
 import { CpusService } from '../services/cpu/cpus.service';
@@ -23,7 +22,8 @@ export class AdminPage implements OnInit {
     private gpusService: GpusService,
     private ramsService: RamsService,
     private motherboardsService: MotherboardsService,
-    private modalCtrl: ModalController
+    private modalCtrl: ModalController,
+    private alertCtrl: AlertController
   ) {}
 
   ngOnInit() {
@@ -75,6 +75,24 @@ export class AdminPage implements OnInit {
     });
 
     return await modal.present();
+  }
+
+  async presentAlert(barangId: string){
+    const alert = await this.alertCtrl.create({
+      header: 'Hapus Item',
+      message: 'Apakah yakin ingin menghapus? Jika sudah dihapus, tidak bisa dikembalikan lagi.',
+      buttons: [
+        {
+          text: 'Batal',
+          role: 'cancel'
+        },
+        {
+          text: 'Hapus',
+          handler: () => this.deleteItem(barangId)
+        }
+      ]
+    });
+    await alert.present();
   }
 
 }
