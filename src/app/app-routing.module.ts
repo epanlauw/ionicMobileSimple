@@ -11,6 +11,19 @@ const routes: Routes = [
     redirectTo: 'home',
     pathMatch: 'full'
   },
+  {
+    path: 'about-app',
+    loadChildren: () => import('./about-app/about-app.module').then( m => m.AboutAppPageModule)
+  },
+  {
+    path: 'admin',
+    loadChildren: () => import('./admin/admin.module').then( m => m.AdminPageModule)
+  },
+  {
+    path: ':barangId',
+    loadChildren: () => import('./barang-detail/barang-detail.module').then( m => m.BarangDetailPageModule)
+  },
+
 ];
 
 @NgModule({
