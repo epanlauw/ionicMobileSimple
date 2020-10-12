@@ -11,8 +11,8 @@ export class HomePage {
 
   barangs: Barang[];
 
-  private list: boolean;
-  private grid: boolean;
+  public list: boolean;
+  public grid: boolean;
 
   constructor(
     private barangsService: BarangsService

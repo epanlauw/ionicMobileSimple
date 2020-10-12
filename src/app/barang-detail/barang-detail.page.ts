@@ -16,7 +16,7 @@ export class BarangDetailPage implements OnInit {
   id: string;
 
   constructor(
-    private router: Router,
+    public router: Router,
     private cpusService: CpusService,
     private gpusService: GpusService,
     private motherboardsService: MotherboardsService,
