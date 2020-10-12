@@ -117,5 +117,21 @@ export class CpusService {
       return cpu.id !== cpuId;
     });
   }
+
+  editCpu(form: NgForm, cpuId: string){
+    return {...this.cpus.find(cpu => {
+      if(cpu.id === cpuId){
+        cpu.merek = form.value.merek,
+        cpu.model = form.value.model,
+        cpu.foto = form.value.imageUrl,
+        cpu.base_clock = form.value.base_clock,
+        cpu.boost_clock = form.value.boost_clock,
+        cpu.core = form.value.core,
+        cpu.thread = form.value.thread,
+        cpu.stock = form.value.stock,
+        cpu.harga = form.value.harga
+      }
+    })}
+  }
   
 }

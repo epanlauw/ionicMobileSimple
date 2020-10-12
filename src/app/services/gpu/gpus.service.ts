@@ -73,4 +73,16 @@ export class GpusService {
       return gpu.id !== gpuId
     });
   }
+
+  editGpu(form: NgForm, gpuId: string){
+    return {...this.gpus.find(gpu => {
+      if(gpu.id === gpuId){
+        gpu.merek = form.value.merek,
+        gpu.model = form.value.model,
+        gpu.foto = form.value.imageUrl,
+        gpu.stock = form.value.stock,
+        gpu.harga = form.value.harga
+      }
+    })};
+  }
 }

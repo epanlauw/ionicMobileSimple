@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { NgForm } from '@angular/forms';
 
 import { Barang } from 'src/app/barang.model';
 
@@ -88,6 +89,18 @@ export class BarangsService {
     this.barangs = this.barangs.filter(barang => {
       return barang.id !== barangId;
     })
+  }
+
+  editBarang(form: NgForm, barangId: string){
+    return {...this.barangs.find(barang => {
+      if(barang.id === barangId){
+          barang.merek = form.value.merek,
+          barang.model = form.value.model,
+          barang.foto = form.value.foto,
+          barang.stock = form.value.stock,
+          barang.harga = form.value.harga
+      }
+    })}
   }
 
   saveGpu(){

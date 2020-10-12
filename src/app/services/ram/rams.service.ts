@@ -72,5 +72,19 @@ export class RamsService {
     });
   }
 
+  editRam(form: NgForm, ramId: string){
+    return {...this.rams.find(ram => {
+      if(ram.id === ramId){
+        ram.merek = form.value.merek,
+        ram.model = form.value.model,
+        ram.foto = form.value.imageUrl,
+        ram.speed = form.value.speed,
+        ram.ukuran = form.value.ukuran,
+        ram.stock = form.value.stock,
+        ram.harga = form.value.harga
+      }
+    })};
+  }
+
   constructor() { }
 }

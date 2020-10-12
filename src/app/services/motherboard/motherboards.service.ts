@@ -83,4 +83,18 @@ export class MotherboardsService {
       return motherboard.id !== motherboardId;
     })
   }
+
+  editMotherboard(form: NgForm, motherboardId: string){
+    return {...this.motherboards.find(motherboard => {
+      if(motherboard.id === motherboardId){
+        motherboard.merek = form.value.merek,
+        motherboard.model = form.value.model,
+        motherboard.foto = form.value.imageUrl,
+        motherboard.chipset = form.value.chipset,
+        motherboard.merek_proci = form.value.merek_proci,
+        motherboard.stock = form.value.stock,
+        motherboard.harga = form.value.harga
+      }
+    })};
+  }
 }
