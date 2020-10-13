@@ -96,7 +96,7 @@ export class BarangsService {
       if(barang.id === barangId){
           barang.merek = form.value.merek,
           barang.model = form.value.model,
-          barang.foto = form.value.foto,
+          barang.foto = form.value.imageUrl,
           barang.stock = form.value.stock,
           barang.harga = form.value.harga
       }
