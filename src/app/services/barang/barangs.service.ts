@@ -122,5 +122,10 @@ export class BarangsService {
     return this.barangs;
   }
 
+  getBarangsMTZ(){
+    return this.barangs.filter(barang =>{
+      return barang.stock > 0;
+    })
+  }
 
 }

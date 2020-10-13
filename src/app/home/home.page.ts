@@ -25,7 +25,7 @@ export class HomePage {
 
   ionViewWillEnter(){
     
-    this.barangs = this.barangsService.getAllBarangs();
+    this.barangs = this.barangsService.getBarangsMTZ();
   }
 
   changeGrid(){
