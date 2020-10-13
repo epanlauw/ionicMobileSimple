@@ -21,7 +21,7 @@
         </ion-item-option>
       </ion-item-options>
 
-      <ion-item>
+      <ion-item (click)="presentModalEdit(barang.id)">
         <ion-thumbnail slot="start">
           <ion-img [src]="barang.foto"></ion-img>
         </ion-thumbnail>
