@@ -27,6 +27,14 @@
         </ion-menu-toggle>
       </ion-list>
     </ion-content>
+    <ion-footer>
+      <ion-menu-toggle menu="barangsMenu">
+        <ion-item lines="none" routerLink="/about-app">
+          <ion-icon name="log-out" slot="start"></ion-icon>
+          <ion-label>Exit</ion-label>
+        </ion-item>
+      </ion-menu-toggle>
+    </ion-footer>
   </ion-menu>
   <ion-router-outlet main></ion-router-outlet>
 </ion-app>
